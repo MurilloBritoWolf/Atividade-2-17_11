@@ -1,16 +1,13 @@
 
 import sqlite3
 
-# =====================================
 # 1. CONEXÃO COM O BANCO DE DADOS
-# =====================================
 
 conexao = sqlite3.connect("escola.db")
 cursor = conexao.cursor()
 
-# =====================================
+
 # 2. CRIAÇÃO DA TABELA
-# =====================================
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS alunos (
@@ -24,9 +21,7 @@ CREATE TABLE IF NOT EXISTS alunos (
 conexao.commit()
 
 
-# =====================================
 # 3. CREATE - CADASTRAR ALUNO
-# =====================================
 
 def cadastrar_aluno():
     print("\n--- CADASTRAR ALUNO ---")
@@ -45,9 +40,7 @@ def cadastrar_aluno():
     print("Aluno cadastrado com sucesso!")
 
 
-# =====================================
 # 4. READ - LISTAR ALUNOS
-# =====================================
 
 def listar_alunos():
     print("\n--- LISTA DE ALUNOS ---")
@@ -69,9 +62,7 @@ Curso: {aluno[3]}
 """)
 
 
-# =====================================
 # 5. UPDATE - ATUALIZAR ALUNO
-# =====================================
 
 def atualizar_aluno():
     print("\n--- ATUALIZAR ALUNO ---")
@@ -106,9 +97,7 @@ def atualizar_aluno():
     print("Aluno atualizado com sucesso!")
 
 
-# =====================================
 # 6. DELETE - EXCLUIR ALUNO
-# =====================================
 
 def excluir_aluno():
     print("\n--- EXCLUIR ALUNO ---")
@@ -143,9 +132,7 @@ def excluir_aluno():
         print("Exclusão cancelada.")
 
 
-# =====================================
 # 7. MENU PRINCIPAL
-# =====================================
 
 while True:
 
@@ -185,9 +172,7 @@ while True:
         print("Opção inválida!")
 
 
-# =====================================
 # 8. ENCERRAR CONEXÃO
-# =====================================
 
 conexao.close()
 
